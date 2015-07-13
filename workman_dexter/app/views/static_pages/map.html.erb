@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Workman Dexter Custom CSS -->
+    <link href="css/workmandexter.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    
+
+    <!-- GOOGLE MAPS API JS -->
+    <!-- Replace the key when ready to deploy, use current google dev profile, setup referrers -->
+    <script type="text/javascript" 
+    src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+
+    function addMarker(map) {
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(39.620332, -78.950277),
+        map:map,
+        title:"Workman Farm"
+      });
+    }
+    function addLabel(map) {
+      var mapLabel = new MapLabel({
+            text: 'Workman Farm',
+            position: new google.maps.LatLng(39.620332, -78.950277),
+            map: map,
+            fontSize: 35,
+            align: 'center'
+        });
+        mapLabel.set('position', new google.maps.LatLng(39.620332, -78.950277));
+    }
+        (function() {
+        window.onload = function(){
+        var latlng = new google.maps.LatLng(39.620332, -78.950277);
+        var options = {
+            zoom: 16,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+            }; 
+            map = new google.maps.Map(document.getElementById('map'), options);
+            addMarker(map);
+            addLabel(map);
+            marker.bindTo('map', mapLabel);
+            marker.bindTo('position', mapLabel);
+            marker.setDraggable(true);
+            }
+        })();
+    </script>
+
+</head>
+<!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Breakdown for Mobile Optimimization -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="http://localhost:3000/">Workman Dexters</a>
+            </div>
+
+            <!-- Links and Headings -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                    <a href="#page-top"></a>
+                    </li>
+                    <li>
+                    <a class="page-scroll" href="http://localhost:3000/static_pages/about">About</a>
+                    </li>
+                    <li>
+                    <a class="page-scroll" href="http://localhost:3000/static_pages/map">Where are we?</a>
+                    </li>
+                    <li>
+                    <a class="page-scroll" href="http://localhost:3000/static_pages/current">For Sale</a>
+                    </li>
+                    <li>
+                    <a class="page-scroll" href="http://localhost:3000/static_pages/history">History</a>
+                    </li>
+                    <li>
+                    <a class="page-scroll" href="http://localhost:3000/static_pages/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>  
+        </div>
+    </nav>
+
+<section id="portfolio" class="bg-light-gray">
+    <div class="container">
+        <!-- Google Maps -->
+        <div class="row">
+
+            <!-- Actual Map in col-md-8 -->
+            <div class="col-md-8" id="map"> </div>
+            <style type="text/css">
+     #map {
+        width: 500px;
+        height: 300px;
+      }
+    </style>
+
+            <!-- md-4 desription -->
+            <div class="col-md-5">
+                <h3>Where We Live</h3>
+                <p>We live in the beautiful and culturally rich hills of Western Maryland.  A short day trip from nearly 4 major cities and plenty of outdoor recreation make for an amazing place to visit or stay!  Please come see us if you are in the neighborhood and we will be happy to talk to you about our operation or give you a tour!</p>
+            </div>
+
+        </div>
+       
+
+        <!-- Skylines and Links into Directions -->
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h4 class="timeline-body">Click on your Cities Skyline for Specific Directions</h4>
+            </div>
+
+            <!-- Charleston WV -->
+            <div class="col-sm-3 col-xs-6">
+                <a href="https://www.google.com/maps/dir/Charleston,+WV/Workman's+Coin-Op+Laundry,+12500+Old+Legislative+Road+Southwest,+Frostburg,+MD+21532/@38.6612109,-81.7330765,7z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x884f2cce88145d39:0x7661a84704c91b0b!2m2!1d-81.6326234!2d38.3498195!1m5!1m1!1s0x89ca9760803efba1:0x341620bb16289ce5!2m2!1d-78.951436!2d39.620468">
+                    <img class="img-responsive portfolio-item" src="http://charlestonwv.com/img/content/header-images/fort_hill_view.jpg" alt="">
+                </a>
+                <h3 class="timeline-body">Charleston, WV</h3>
+            </div>
+            <!-- Pittsburg PA -->
+            <div class="col-sm-3 col-xs-6">
+                <a href="https://www.google.com/maps/dir/Pittsburgh,+PA/Workman's+Coin-Op+Laundry,+12500+Old+Legislative+Road+Southwest,+Frostburg,+MD+21532/@40.0115156,-80.1714144,9z/data=!4m14!4m13!1m5!1m1!1s0x8834f16f48068503:0x8df915a15aa21b34!2m2!1d-79.9958864!2d40.4406248!1m5!1m1!1s0x89ca9760803efba1:0x341620bb16289ce5!2m2!1d-78.951436!2d39.620468!5i2">
+                    <img class="img-responsive portfolio-item" src="https://upload.wikimedia.org/wikipedia/commons/6/61/Pittsburgh_skyline_night.jpg" alt="">
+                </a>
+                <h3 class="timeline-body">Pittsburgh, PA</h3>
+            </div>
+
+            <!-- Washington DC -->
+            <div class="col-sm-3 col-xs-6">
+                <a href="https://www.google.com/maps/dir/Washington/Workman's+Coin-Op+Laundry,+12500+Old+Legislative+Road+Southwest,+Frostburg,+MD+21532/@39.2996057,-77.9940377,9z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x89b7c6de5af6e45b:0xc2524522d4885d2a!2m2!1d-77.0368707!2d38.9071923!1m5!1m1!1s0x89ca9760803efba1:0x341620bb16289ce5!2m2!1d-78.951436!2d39.620468">
+                    <img class="img-responsive portfolio-item" src="http://www.trolleytours.com/washington-dc/images/washington-dc-memorials.jpg" alt="">
+                </a>
+                <h3 class="timeline-body">Washington D.C.</h3>
+            </div>
+
+            <!-- Baltimore MD -->
+            <div class="col-sm-3 col-xs-6">
+                <a href="https://www.google.com/maps/dir/Baltimore,+MD/Workman's+Coin-Op+Laundry,+12500+Old+Legislative+Road+Southwest,+Frostburg,+MD+21532/@39.3928613,-78.9636554,8z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x89c803aed6f483b7:0x44896a84223e758!2m2!1d-76.6121893!2d39.2903848!1m5!1m1!1s0x89ca9760803efba1:0x341620bb16289ce5!2m2!1d-78.951436!2d39.620468">
+                    <img class="img-responsive portfolio-item" src="https://static1.squarespace.com/static/5361f178e4b0ff1ad7aedf0f/t/555a4244e4b0d4c3ac45e32a/1431978566112/city-crop.jpg?format=1500w" alt="">
+                </a>
+                <h3 class="timeline-body">Baltimore, MD</h3>
+            </div>
+
+        </div>
+      </section>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Jacob Wilson 2015</span>
+                </div>
+                
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="http://www.visitfrostburg.com/">Located in Beautiful Frostburg Maryland</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </footer>
+
+    </div>
+   
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+
